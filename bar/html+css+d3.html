@@ -24,16 +24,16 @@
 </head>
 <body>
   <div id="container"></div>
-</body>
   <script type="text/javascript" src="../d3.js"></script>
   <script type="text/javascript">
-  var data = [18, 21, 40, 36, 45];
-  d3.select("#container")
-    .selectAll("div")
-    .data(data)
-    .enter()
-    .append("div")
-    .style("width", function(d) { return d * 10 + 'px'})
-    .text(function(d) { return d});
+    var data = [18, 21, 40, 36, 45];
+    d3.select("#container")
+      .selectAll("div")
+      .data(data)
+      .enter()
+      .append("div")
+      .style("width", function(d) { return d * 10 + 'px'})
+      .text(function(d) { return d});
   </script>
+</body>
 </html>

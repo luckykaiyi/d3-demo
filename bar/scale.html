@@ -24,18 +24,18 @@
 </head>
 <body>
   <div id="container"></div>
-</body>
   <script type="text/javascript" src="../d3.js"></script>
   <script type="text/javascript">
-  var data = [1800, 2100, 4000, 3600, 4500];
-  var linear = d3.scaleLinear().domain([0, d3.max(data)]).range([0, 500]);
+    var data = [1800, 2100, 4000, 3600, 4500];
+    var linear = d3.scaleLinear().domain([0, d3.max(data)]).range([0, 500]);
 
-  d3.select("#container")
-    .selectAll("div")
-    .data(data)
-    .enter()
-    .append("div")
-    .style("width", function(d) { return linear(d) + 'px'})
-    .text(function(d) { return d});
+    d3.select("#container")
+      .selectAll("div")
+      .data(data)
+      .enter()
+      .append("div")
+      .style("width", function(d) { return linear(d) + 'px'})
+      .text(function(d) { return d});
   </script>
+</body>
 </html>
