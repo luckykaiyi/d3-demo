@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>enter</title>
+</head>
+<body>
+  <svg width="600" height="400"></svg>
+  <script type="text/javascript" src="./d3.js"></script>
+  <script type="text/javascript">
+    var data = [10, 20, 30, 40];
+    var circle = d3.select('svg')
+      .selectAll("circle")
+      .data(data);
+
+    circle.enter()
+      .append("circle")
+      .style("fill", 'blue')
+      .attr("r", function(d, i) { return d; })
+      .attr("cx", function(d, i) { return i * 100 + 50; })
+      .attr("cy", function(d, i) { return i * 100 + 50; });
+  </script>
+</body>

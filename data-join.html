@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>data join</title>
+</head>
+<body>
+  <svg width="600" height="400">
+    <circle cx="100" cy="200" r="50"></circle>
+    <circle cx="300" cy="200" r="50"></circle>
+    <circle cx="500" cy="200" r="50"></circle>
+  </svg>
+  <script type="text/javascript" src="./d3.js"></script>
+  <script type="text/javascript">
+    var data = [10, 20, 30];
+    d3.selectAll("circle")
+      .data(data)
+      .style("fill", "pink")
+      .attr("r", function(d, i) { return d; })
+      .attr("cx", function(d, i) { return i * 100 + 50; });
+  </script>
+</body>
+</html>

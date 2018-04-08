@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>enter</title>
+</head>
+<body>
+  <svg width="600" height="400">
+    <circle cx="100" cy="200" r="50"></circle>
+    <circle cx="300" cy="200" r="50"></circle>
+    <circle cx="500" cy="200" r="50"></circle>
+  </svg>
+  <script type="text/javascript" src="./d3.js"></script>
+  <script type="text/javascript">
+    var data = [10, 20, 30, 40];
+    var svg = d3.select("svg");
+
+    // DATA JOIN
+    var circle = svg.selectAll("circle").data(data);
+
+    // Update
+    circle
+      .style("fill", "pink")
+      .attr("r", function(d, i) { return d; })
+      .attr("cx", function(d, i) { return i * 100 + 50; })
+      .attr("cy", function(d, i) { return i * 100 + 50; });
+
+    // Enter
+    circle.enter().append("circle")
+      .style("fill", "blue")
+      .attr("r", function(d, i) { return d; })
+      .attr("cx", function(d, i) { return i * 100 + 50; })
+      .attr("cy", function(d, i) { return i * 100 + 50; });
+
+    // Update + Enter
+    // After merging the entered elements with the update selection,
+    // apply operations to both
+
+    // circle.enter().append("circle")
+    //   .style("fill", "blue")
+    //   .merge(circle)
+    //   .attr("r", function(d, i) { return d; })
+    //   .attr("cx", function(d, i) { return i * 100 + 50; })
+    //   .attr("cy", function(d, i) { return i * 100 + 50; });
+
+  </script>
+</body>
+</html>
